@@ -1,0 +1,38 @@
+.movieRow {
+  background-color: red;
+  margin-bottom: 30px;
+}
+
+.movieRow h2 {
+  margin: 0px 30px;
+}
+
+.movieRow--listArea {
+  background-color: green;
+  overflow-x: hidden;
+  padding-left: 30px;
+}
+
+.movieRow--item {
+  display: inline-block;
+  width: 150px;
+  cursor: pointer;
+}
+
+.movieRow--item img {
+  width: 100%;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition: ease 0.2s;
+  transition: ease 0.2s;
+}
+
+.movieRow--item img:hover {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+.movieRow--list {
+  width: 99999999px;
+}
+/*# sourceMappingURL=MovieRow.css.map */
