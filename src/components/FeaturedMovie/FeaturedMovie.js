@@ -3,9 +3,6 @@ import './FeaturedMovie.css'
 
 export default function FeaturedMovie(props) {
 
-  console.log(props.item.name)
-
-
   let firstDate = new Date(props.item.first_air_date)
   let genres = []
   for(let i in props.item.genres){

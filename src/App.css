@@ -12,3 +12,11 @@ body{
 .lists{
   margin-top:-120px;
 }
+a{
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+}
+li{
+  list-style-type: none;
+}

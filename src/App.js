@@ -5,12 +5,14 @@ import MovieRow from './components/MovieRow/MovieRow'
 import './App.css'
 import FeaturedMovie from "./components/FeaturedMovie/FeaturedMovie";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 export default () =>{
 
   const [movieList, setMovieList] = useState([])
   const [featuredData, setFeaturedData] = useState(null)
   const [blackHeader, setBlackHeader] = useState(false)
+  const [name, setName] = useState('')
 
 
   useEffect(() => {
@@ -50,10 +52,25 @@ export default () =>{
     loadAll()
   },[])
 
+
+  function handleChange(e){
+    let nameInput = e.target.value
+    setName(nameInput)
+  }
+  function submitName(){
+    if(name == ''){
+      alert('error')
+    }else{
+      console.log(name)
+    }
+  }
+
  
   return (
 
     <div className="page">
+      <input onChange={handleChange} type='text'/>
+      <button onClick={submitName}>Set name</button>
       <Header black={blackHeader} />
       {featuredData &&
         <FeaturedMovie item={featuredData} />
@@ -65,6 +82,8 @@ export default () =>{
           )
         })}
       </section>
+
+      <Footer />
     </div>
 
   )
