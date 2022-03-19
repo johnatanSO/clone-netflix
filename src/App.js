@@ -4,12 +4,29 @@ import tmdb from './Tmdb'
 import MovieRow from './components/MovieRow/MovieRow'
 import './App.css'
 import FeaturedMovie from "./components/FeaturedMovie/FeaturedMovie";
-
+import Header from "./components/Header/Header";
 
 export default () =>{
 
   const [movieList, setMovieList] = useState([])
   const [featuredData, setFeaturedData] = useState(null)
+  const [blackHeader, setBlackHeader] = useState(false)
+
+
+  useEffect(() => {
+    const scrollListener = () => {
+      if(window.scrollY > 10){
+        setBlackHeader(true);
+      }else(setBlackHeader(false))
+    }
+    
+    window.addEventListener('scroll', scrollListener)
+
+    return () => {
+      window.removeEventListener('scroll',scrollListener)
+    }
+    
+  },[])
 
 
 
@@ -21,28 +38,26 @@ export default () =>{
       setMovieList(list)
 
 
-      let originals = list.filter((item) => {return item.slug == 'originals'})
-      setFeaturedData(originals)
+      let originals = list.filter((i) => {return i.slug === 'originals'})
+      let randomChosen = Math.floor(Math.random() * (originals[0].items.results.length -1))
+      let chosen = originals[0].items.results[randomChosen]
+      let chosenInfo = await tmdb.getMovieInfo(chosen.id, 'tv')
+      /* console.log(chosenInfo) */
+
+      setFeaturedData(chosenInfo)
+      
     }
     loadAll()
   },[])
-  
 
-  console.log(movieList)
-  movieList.map((item,key)=>{
-    console.log(item)
-  })
-  console.log(featuredData)
-
-
+ 
   return (
 
     <div className="page">
-
+      <Header black={blackHeader} />
       {featuredData &&
         <FeaturedMovie item={featuredData} />
       }
-      <FeaturedMovie/>
       <section className="lists">
         {movieList.map((item,key) => {
           return(

@@ -1,5 +1,4 @@
 .movieRow{
-  background-color: red;
   margin-bottom: 30px;
 
   h2{
@@ -7,20 +6,21 @@
   }
 }
 .movieRow--listArea{
-  background-color: green;
   overflow-x: hidden;
   padding-left: 30px;
+  mask-image: linear-gradient(to right, black 80%, transparent);
 }
 .movieRow--item{
   display: inline-block;
   width: 150px;
   cursor: pointer;
+  
 
   img{
     width: 100%;
     transform: scale(0.9);
     transition: ease 0.2s;
-
+    box-shadow: 2px 2px 7px rgb(4, 4, 4);
     &:hover{
     transform: scale(0.95);
     }

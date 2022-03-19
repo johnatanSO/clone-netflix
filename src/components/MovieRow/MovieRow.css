@@ -1,5 +1,4 @@
 .movieRow {
-  background-color: red;
   margin-bottom: 30px;
 }
 
@@ -8,9 +7,12 @@
 }
 
 .movieRow--listArea {
-  background-color: green;
   overflow-x: hidden;
   padding-left: 30px;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right top, color-stop(80%, black), to(transparent));
+  -webkit-mask-image: linear-gradient(to right, black 80%, transparent);
+          mask-image: -webkit-gradient(linear, left top, right top, color-stop(80%, black), to(transparent));
+          mask-image: linear-gradient(to right, black 80%, transparent);
 }
 
 .movieRow--item {
@@ -25,6 +27,8 @@
           transform: scale(0.9);
   -webkit-transition: ease 0.2s;
   transition: ease 0.2s;
+  -webkit-box-shadow: 2px 2px 7px #040404;
+          box-shadow: 2px 2px 7px #040404;
 }
 
 .movieRow--item img:hover {
