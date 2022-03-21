@@ -13,7 +13,6 @@ export default (props) => {
           x = 0
         }
         setMarginList(x)
-        
   }
 
   function handleRightArrow(){
@@ -31,9 +30,9 @@ export default (props) => {
     <div className="movieRow">
       <h2>{props.title}</h2>
 
-      <div onClick={handleLeftArrow} className="movieRow--left">voltar</div>
+      <div onClick={handleLeftArrow} className="movieRow--left"><img src="/assets/arrow.png"/></div>
 
-      <div onClick={handleRightArrow} className="movieRow--right">avançar</div>
+      <div onClick={handleRightArrow} className="movieRow--right"><img src="/assets/arrow.png"/></div>
 
       <div className='movieRow--listArea'>
 

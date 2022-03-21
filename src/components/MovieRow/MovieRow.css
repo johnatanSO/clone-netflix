@@ -30,6 +30,12 @@
   transition: ease 0.5s;
 }
 
+.movieRow .movieRow--left img, .movieRow .movieRow--right img {
+  width: 45px;
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
 @media (max-width: 768px) {
   .movieRow .movieRow--left, .movieRow .movieRow--right {
     opacity: 1;
@@ -38,6 +44,11 @@
 
 .movieRow .movieRow--left {
   left: 0;
+}
+
+.movieRow .movieRow--left img {
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
 }
 
 .movieRow .movieRow--right {
