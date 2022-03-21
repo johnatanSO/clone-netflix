@@ -1,5 +1,6 @@
 .featured {
   height: 100vh;
+  width: 100vw;
 }
 
 .featured .featured--vertical {
@@ -34,6 +35,12 @@
   font-weight: bold;
 }
 
+@media (max-width: 768px) {
+  .featured .featured--vertical .featured--horizontal .featured--name {
+    font-size: 40px;
+  }
+}
+
 .featured .featured--vertical .featured--horizontal .featured--info {
   font-size: 18px;
   font-weight: bold;
@@ -41,6 +48,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 768px) {
+  .featured .featured--vertical .featured--horizontal .featured--info {
+    font-size: 16px;
+  }
 }
 
 .featured .featured--vertical .featured--horizontal .featured--info div {
@@ -56,6 +69,14 @@
   font-size: 20px;
   color: #999;
   max-width: 40%;
+}
+
+@media (max-width: 768px) {
+  .featured .featured--vertical .featured--horizontal .featured--description {
+    max-width: 100%;
+    margin-right: 30px;
+    font-size: 14px;
+  }
 }
 
 .featured .featured--vertical .featured--horizontal .featured--buttons {

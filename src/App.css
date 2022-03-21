@@ -7,6 +7,7 @@ body{
   background-color: #111;
   color: white;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 
 .lists{
@@ -14,9 +15,36 @@ body{
 }
 a{
   text-decoration: none;
-  color: red;
+  color: rgb(170, 0, 0);  
   font-weight: bold;
 }
 li{
   list-style-type: none;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;               
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(22, 22, 22);        
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(170, 0, 0);    
+  border-radius: 20px;     
+ 
+}
+
+.loading{
+  position:fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: #000;
+  display:flex;
+  align-items: center;
+  justify-content:center
 }

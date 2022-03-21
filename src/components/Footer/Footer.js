@@ -11,7 +11,7 @@ function Footer() {
           <ul>
             <li>Dados: API RESTfull The movie DB</li>
             <li>Layout: Netflix</li>
-            <li>Construído com 💜 por Johnatan</li>
+            <li>Construído com <span role="img" aria-label="coração">❤️</span> por Johnatan</li>
           </ul>
         </div>
 

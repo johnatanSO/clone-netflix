@@ -13,6 +13,7 @@ export default () =>{
   const [featuredData, setFeaturedData] = useState(null)
   const [blackHeader, setBlackHeader] = useState(false)
   const [name, setName] = useState('')
+  const [userName, setUserName] = useState('')
 
 
   useEffect(() => {
@@ -61,7 +62,7 @@ export default () =>{
     if(name == ''){
       alert('error')
     }else{
-      console.log(name)
+      setUserName(name)
     }
   }
 
@@ -69,9 +70,9 @@ export default () =>{
   return (
 
     <div className="page">
-      <input onChange={handleChange} type='text'/>
-      <button onClick={submitName}>Set name</button>
-      <Header black={blackHeader} />
+      {/* <input onChange={handleChange} type='text'/> */}
+      {/* <button onClick={submitName}>Set name</button> */}
+      <Header userName={userName} black={blackHeader} />
       {featuredData &&
         <FeaturedMovie item={featuredData} />
       }
@@ -84,7 +85,14 @@ export default () =>{
       </section>
 
       <Footer />
-    </div>
 
+
+        {movieList.length <= 0 && 
+          <div className="loading">
+            <img src="/assets/loading.svg" />
+          </div>
+      }
+      
+    </div>
   )
 }

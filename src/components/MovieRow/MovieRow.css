@@ -6,6 +6,44 @@
   margin: 0px 30px;
 }
 
+.movieRow .movieRow--left, .movieRow .movieRow--right {
+  position: absolute;
+  width: 40px;
+  height: 225px;
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 99;
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
+}
+
+@media (max-width: 768px) {
+  .movieRow .movieRow--left, .movieRow .movieRow--right {
+    opacity: 1;
+  }
+}
+
+.movieRow .movieRow--left {
+  left: 0;
+}
+
+.movieRow .movieRow--right {
+  right: 0;
+}
+
 .movieRow--listArea {
   overflow-x: hidden;
   padding-left: 30px;
@@ -37,6 +75,11 @@
 }
 
 .movieRow--list {
-  width: 99999999px;
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.movieRow:hover .movieRow--left, .movieRow:hover .movieRow--right {
+  opacity: 1;
 }
 /*# sourceMappingURL=MovieRow.css.map */
